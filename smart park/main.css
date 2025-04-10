@@ -1,0 +1,265 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --success-color: #2ECC71;
+    --danger-color: #E74C3C;
+    --text-color: #ECF0F1;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, rgb(39, 4, 194) 0%, rgba(52,73,94,1) 100%);
+}
+
+/* Estilos de la pantalla principal */
+.main-screen {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.car-icon {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 0px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transition: var(--transition);
+}
+
+.car-icon:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, var(--secondary-color), var(--success-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Estilos de la pantalla de aparcamientos */
+.parking-screen {
+    padding-top: 20px;
+    animation: slideUp 0.6s ease-out;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.clock-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+.parking-spots {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.spot {
+    background: var(--success-color);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: left;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 120px;
+}
+
+.spot-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spot .time {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.spot .status {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.spot .countdown {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.spot .actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.cancel-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.spot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.spot:hover::before {
+    opacity: 1;
+}
+
+.spot.occupied {
+    background: var(--danger-color);
+}
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--secondary-color), var(--success-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .parking-spots {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

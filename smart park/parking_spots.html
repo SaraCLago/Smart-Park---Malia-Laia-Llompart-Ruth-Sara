@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PARK - Parking Spots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="parking-screen">
+            <header class="top-bar">
+                <div class="clock-icon">
+                    <img src="clock.svg" alt="Clock Icon">
+                </div>
+                <h2>SMART PARK</h2>
+                <div id="current-time" class="current-time"></div>
+            </header>
+            
+            <div class="parking-spots">
+                <div class="spot available" data-spot="1">
+                    <div class="spot-info">
+                        <span class="time">00:00</span>
+                        <span class="status">Available</span>
+                        <span class="countdown"></span>
+                    </div>
+                    <div class="actions"></div>
+                </div>
+                <div class="spot available" data-spot="2">
+                    <div class="spot-info">
+                        <span class="time">00:00</span>
+                        <span class="status">Available</span>
+                        <span class="countdown"></span>
+                    </div>
+                    <div class="actions"></div>
+                </div>
+                <div class="spot occupied" data-spot="3" data-end-time="2024-03-21T12:38:00">
+                    <div class="spot-info">
+                        <span class="time">11:38</span>
+                        <span class="status">Occupied</span>
+                        <span class="countdown"></span>
+                    </div>
+                    <div class="actions"></div>
+                </div>
+                <div class="spot available" data-spot="4">
+                    <div class="spot-info">
+                        <span class="time">00:00</span>
+                        <span class="status">Available</span>
+                        <span class="countdown"></span>
+                    </div>
+                    <div class="actions"></div>
+                </div>
+            </div>
+            
+            <div class="back-button">
+                <a href="index.html" class="btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
